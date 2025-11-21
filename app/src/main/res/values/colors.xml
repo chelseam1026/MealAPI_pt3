@@ -1,5 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="background_gray">#2A2A2A</color>
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="primary_orange">#FF9800</color>
+    <color name="light_orange">#FFC766</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#BBBBBB</color>
+    <color name="text_on_light_orange">#000000</color>
+    <color name="spinner_bg">#FF9800</color>
 </resources>

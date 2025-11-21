@@ -27,11 +27,9 @@ class MealAdapter(private val meals: List<Meal>) :
         val meal = meals[position]
         holder.tvName.text = meal.name
         holder.tvOrigin.text = meal.origin
-        Glide.with(holder.itemView.context).load(meal.thumbnail).into(holder.ivThumb)
-
-
         Glide.with(holder.itemView.context)
             .load(meal.thumbnail)
+            .placeholder(R.drawable.ic_launcher_foreground)
             .into(holder.ivThumb)
     }
 

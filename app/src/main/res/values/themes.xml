@@ -1,9 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.FoodAPI" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <style name="Theme.FoodApi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Backgrounds / surfaces -->
+        <item name="android:windowBackground">@color/background_gray</item>
+        <item name="android:colorBackground">@color/background_gray</item>
+
+        <!-- Primary / accent -->
+        <item name="colorPrimary">@color/primary_orange</item>
+        <item name="colorPrimaryVariant">@color/light_orange</item>
+        <item name="colorOnPrimary">@color/text_on_light_orange</item>
+
+        <!-- App font default (optional) -->
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+
+        <!-- Remove default action bar (we use Spinner as header) -->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.FoodAPI" parent="Base.Theme.FoodAPI" />
 </resources>

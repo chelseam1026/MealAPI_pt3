@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val url = "https://www.themealdb.com/api/json/v1/1/categories.php"
 
         client.get(url, object : AsyncHttpResponseHandler() {
+
             override fun onSuccess(statusCode: Int, headers: Array<Header>?, body: ByteArray?) {
 
                 val json = JSONObject(String(body!!))
@@ -48,11 +49,11 @@ class MainActivity : AppCompatActivity() {
 
                 val adapter = ArrayAdapter(
                     this@MainActivity,
-                    android.R.layout.simple_spinner_item,
+                    R.layout.spinner_layout,
                     categories
                 )
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
+                adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
                 spinner.adapter = adapter
 
                 spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -80,6 +81,7 @@ class MainActivity : AppCompatActivity() {
         val url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=$category"
 
         client.get(url, object : AsyncHttpResponseHandler() {
+
             override fun onSuccess(code: Int, headers: Array<Header>?, body: ByteArray?) {
 
                 val mealList = mutableListOf<Meal>()
@@ -99,9 +101,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fetchMealDetails(mealName: String, mealList: MutableList<Meal>) {
-        val detailUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=$mealName"
+        val url = "https://www.themealdb.com/api/json/v1/1/search.php?s=$mealName"
 
-        client.get(detailUrl, object : AsyncHttpResponseHandler() {
+        client.get(url, object : AsyncHttpResponseHandler() {
+
             override fun onSuccess(code: Int, headers: Array<Header>?, body: ByteArray?) {
 
                 val json = JSONObject(String(body!!))
@@ -118,7 +121,9 @@ class MainActivity : AppCompatActivity() {
                 rvMeals.adapter = MealAdapter(mealList)
             }
 
-            override fun onFailure(code: Int, headers: Array<Header>?, body: ByteArray?, error: Throwable?) {}
+            override fun onFailure(code: Int, headers: Array<Header>?, body: ByteArray?, error: Throwable?) {
+                Toast.makeText(this@MainActivity, "Failed to load meal details", Toast.LENGTH_SHORT).show()
+            }
         })
     }
 }

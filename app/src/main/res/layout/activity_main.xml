@@ -5,14 +5,14 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center_horizontal"
-    android:background="#000000">
+    android:background="#2A2A2A">
 
     <Spinner
         android:id="@+id/spinnerCategories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:padding="8dp"
+        android:background="#DCA048"
+        android:padding="12dp"
         android:spinnerMode="dropdown" />
 
     <androidx.recyclerview.widget.RecyclerView
